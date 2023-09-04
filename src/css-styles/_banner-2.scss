@@ -1,0 +1,47 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.banner-2 {
+  margin-bottom: 73px;
+  // margin: 0 auto;
+  background-image: url('../img/banner-2/banner-2.png');
+  background-repeat: no-repeat;
+  &__container {
+    @include container-base;
+    padding: 154px 0 150px;
+    .banner-2__title {
+      font-family: 'PlayfairDisplay';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 120%;
+      color: $gold;
+    }
+    .banner-2__text {
+      margin-bottom: 49px;
+      font-family: 'OpenSans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 57.6px;
+      color: $white;
+    }
+    .banner-2__btn {
+      @include btn-1;
+      max-width: 187px;
+      padding: 21px 35px;
+      background-color: $primary;
+      color: $white;
+      transition: background-color .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+    }
+    .banner-2__btn:focus {
+      @include btn-focus;
+    }
+    .banner-2__btn:hover {
+      @include btn-hover;
+    }
+    .banner-2__btn:active {
+      @include btn-active;
+    }
+  }
+}

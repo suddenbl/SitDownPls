@@ -1,0 +1,26 @@
+body {
+  box-sizing: border-box;
+  background-color: white;
+  font-family: 'OpenSans';
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+p, a, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tippy-box {
+  text-align: center;
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+  color: #fff;
+}

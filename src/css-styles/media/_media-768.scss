@@ -1,0 +1,263 @@
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+@media (max-width: 1023px) {
+  .header-1 {
+    &__container {
+      @include container-768;
+    }
+    .header-1-box {
+      &__city-selection {
+        justify-content: space-between;
+      }
+      &__nav {
+        padding: 15px 0px 15px 0px;
+        .header-1-box__list {
+          width: 100%;
+          gap: 0;
+          justify-content: space-between;
+        }
+        &-buttons {
+          display: none;
+        }
+      }
+      &__nav::after {
+        left: -12%;
+        right: -12%;
+      }
+    }
+  }
+
+  .header-2 {
+    &__container {
+      @include container-768;
+      .header-2-bottom {
+        &__1 {
+          padding: 19px 0px 29px 0px;
+          .burger {
+            @include btn-reset;
+            display: block;
+            position: relative;
+            width: 21px;
+            margin-right: 23%;
+            z-index: 1000;
+            transition: transform .3s ease-in-out;
+            &__span {
+              position: absolute;
+              width: 100%;
+              border: 2px solid $primary;
+              border-radius: 4px;
+              left: 0;
+              transition: top .3s ease-in-out, bottom .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out;
+            }
+            &__span-1 {
+              top: 1px;
+            }
+            &__span-2 {
+              top: 12px;
+            }
+            &__span-3 {
+              bottom: 6px;
+            }
+          }
+          .burger--active {
+            .burger__span-1 {
+              top: 12px;
+              transform: rotate(45deg);
+            }
+            .burger__span-2 {
+              // display: none;
+              opacity: 0;
+            }
+            .burger__span-3 {
+              bottom: 16px;
+              transform: rotate(-45deg);
+            }
+          }
+          &-logo {
+            margin-right: 11%;
+          }
+          &-nav {
+            display: flex;
+            position: absolute;
+            top: 107px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 81%;
+            height: 17vh;
+            padding: 91px 72px 59px 72px;
+            background-color: $white;
+            z-index: 10;
+            background-image: url('../img/catalog/elephant.svg');
+            background-repeat: no-repeat;
+            background-size: 21%;
+            background-position: 88% 68%;
+            transform: translatex(-200%);
+            transition: transform .3s ease-in-out;
+            ul {
+              flex-direction: column;
+              flex-wrap: wrap;
+              gap: 21px 64px;
+            }
+          }
+          .nav--active {
+            transform: none;
+            .header-2-bottom__1-list {
+              width: 37vw;
+              flex-direction: column;
+              flex-wrap: wrap;
+              gap: 35px 64px;
+            }
+          }
+          &-buttons {
+            display: flex;
+            gap: 32px;
+            button {
+              @include btn-reset;
+              right: 35.5%;
+            }
+          }
+        }
+        &__2 {
+          form {
+            svg {
+              left: 34px;
+            }
+            input {
+              padding: 22px 8px 20px 58px;
+            }
+            button {
+              top: 24.5%;
+              right: 46.2%;
+            }
+            .choices {
+              width: 30%;
+              .choices__inner {
+                width: 86%;
+                padding: 0px 0 0 19px;
+                background-color: $grey-light;
+              }
+              .choices__list {
+                width: 86%;
+                padding: 13px;
+              }
+              .choices__list--dropdown {
+                .choices__item {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+        .header-2-bottom__2-form .choices[data-type*=select-one]::after {
+          right: 18%;
+        }
+      }
+    }
+  }
+
+  .banner {
+    .banner__swiper {
+      .banner__content-1, .banner__content-2, .banner__content-3 {
+        left: 9.7%;
+      }
+    }
+  }
+
+  .special-offers {
+    &__container {
+      @include container-768;
+      padding-top: 67px;
+      .special-offers__list-item {
+        max-width: 35.3%;
+      }
+    }
+  }
+
+  .high-rated {
+    &__container {
+      @include container-768;
+      .high-rated__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
+  }
+
+  .banner-2 {
+    background-image: url('../img/banner-2/banner-2-768.png');
+    background-size: cover;
+  }
+
+  .top-cat {
+    &__container {
+      @include container-768;
+      .top-cat__box {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 511px);
+        grid-template-areas: "a a a a a a"
+                             "c c c b b b"
+                             "d d d e e e";
+      }
+    }
+  }
+
+  .useful {
+    &__container {
+      @include container-768;
+      .useful__swiper {
+        .useful__swiper-slide {
+          width: unset;
+        }
+      }
+    }
+  }
+
+  .greet {
+    &__container {
+      @include container-768;
+      .greet__container-1 {
+        gap: 30px;
+        justify-content: space-between;
+        .greet__content {
+          width: unset;
+          max-width: 68%;
+          &-block {
+            max-width: 88%;;
+          }
+          form {
+            gap: 29px;
+            input {
+              width: 87%;
+            }
+            button {
+              margin-bottom: -4%;
+            }
+          }
+        }
+        .greet__picture {
+          height: unset;
+          margin: 0;
+          background-image: url('../img/greet/greet-768.png');
+          background-position: 103% 303%;
+          background-size: 108%;
+        }
+      }
+    }
+  }
+
+  .footer {
+    &__container {
+      @include container-768;
+      gap: 21px;
+      flex-direction: column;
+      .footer__block-1 {
+        flex-direction: row;
+      }
+      .footer__block-2 {
+        width: 100%;
+      }
+    }
+  }
+}

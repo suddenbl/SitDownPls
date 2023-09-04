@@ -1,0 +1,115 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.high-rated {
+  margin-bottom: 73px;
+  &__container {
+    @include container-base;
+    display: flex;
+    flex-direction: column;
+    .high-rated__title {
+      margin-bottom: 26px;
+      font-family: 'OpenSans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 100%;
+      color: $black;
+    }
+    .high-rated__link {
+      display: flex;
+      justify-content: center;
+    }
+    .high-rated__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+    .card {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 65px 15px 34px;
+      gap: 0px;
+      border-radius: 10px;
+      background-color: $grey-light;
+      &__sticker {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        position: absolute;
+        top: 31px;
+        left: 30px;
+        &-text {
+          font-family: 'OpenSans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 130%;
+          color: $secondary;
+        }
+      }
+      &__picture {
+        display: flex;
+        align-items: flex-end;
+        height: 50%;
+        margin-bottom: 12px;
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      &__box {
+        margin-left: 16px;
+        .box__title {
+          margin-bottom: 24px;
+          font-family: 'OpenSans';
+          font-size: 24px;
+          line-height: 130%;
+          color: $black;
+        }
+        .box__price {
+          margin-bottom: 24px;
+          font-family: 'OpenSans';
+          font-size: 16px;
+          line-height: 130%;
+          color: $grey-shade;
+        }
+        .box__btn {
+          @include btn-1;
+          transition: color .3s ease-in-out, background-color .3s ease-in-out;
+        }
+        .box__btn:focus {
+          @include btn-1-focus;
+        }
+        .box__btn:hover {
+          @include btn-1-hover;
+        }
+        .box__btn:active {
+          @include btn-1-active;
+        }
+      }
+    }
+    .high-rated__btn {
+      @include btn-1;
+      max-width: 296px;
+      color: $white;
+      background-color: $primary;
+      align-self: center;
+      transition: color .3s ease-in-out, background-color .3s ease-in-out, outline .3s ease-in-out;
+    }
+    .high-rated__btn:focus {
+      @include btn-focus;
+    }
+    .high-rated__btn:hover {
+      @include btn-hover;
+    }
+    .high-rated__btn:active {
+      @include btn-active;
+    }
+  }
+}

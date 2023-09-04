@@ -1,0 +1,161 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.useful {
+  &__container {
+    @include container-base;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    .useful__title {
+      @include section-title;
+    }
+    .useful__nav {
+      position: relative;
+      .swiper-button-prev {
+        right: 45px;
+        left: unset;
+      }
+      .swiper-button-next {
+        right: var(--swiper-navigation-sides-offset, 0px);
+      }
+      .swiper-button-next, .swiper-button-prev {
+        width: unset;
+        top: -65px;
+      }
+      .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-rtl .swiper-button-next:after {
+        content: '';
+      }
+      .swiper-button-next svg {
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+      }
+      .swiper-button-prev svg, .swiper-button-next svg {
+        fill: transparent;
+      }
+      .swiper-button-prev svg path, .swiper-button-prev svg circle, .swiper-button-next svg path, .swiper-button-next svg circle {
+        stroke: $primary;
+      }
+      .swiper-button-prev svg rect, .swiper-button-next svg rect {
+        fill: $primary;
+      }
+      .swiper-button-prev svg path, .swiper-button-prev svg circle, .swiper-button-next svg path, .swiper-button-next svg circle {
+        stroke: $primary;
+      }
+      .swiper-button-disabled {
+        opacity: 1;
+      }
+      .swiper-button-disabled svg path, .swiper-button-disabled svg circle {
+        stroke: $grey;
+      }
+      .swiper-button-disabled svg rect {
+        fill: $primary;
+      }
+      button {
+        @include btn-reset;
+        svg {
+          path {
+            transition: stroke .3s ease-in-out;
+          }
+          circle {
+            transition: stroke .3s ease-in-out, fill .3s ease-in-out;
+          }
+        }
+      }
+      button:focus {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary-light;
+            stroke: $primary;
+          }
+        }
+      }
+      button:hover {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary;
+            stroke: $primary;
+          }
+
+        }
+      }
+      button:active {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary-shade;
+            stroke: $primary-shade;
+          }
+        }
+      }
+    }
+    .useful__swiper {
+      overflow-x: hidden;
+      &-slide {
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 676px;
+        background-color: $grey-light;
+        border-radius: 10px;
+        .useful__picture {
+          height: 426px;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .useful__wrap {
+          display: flex;
+          flex-direction: column;
+          height: 28%;
+          padding: 30px;
+          .useful__text {
+            margin-bottom: auto;
+            font-family: 'OpenSans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 33px;
+            color: $black;
+          }
+          .useful__button {
+            @include btn-1;
+            transition: color .3s ease-in-out, background-color .3s ease-in-out;
+          }
+          .useful__button:focus {
+            @include btn-1-focus;
+          }
+          .useful__button:hover {
+            @include btn-1-hover;
+          }
+          .useful__button:active {
+            @include btn-1-active;
+          }
+        }
+      }
+      .useful__picture-1 {
+        background-image: url('../img/useful/useful-1.png');
+      }
+      .useful__picture-2 {
+        background-image: url('../img/useful/useful-2.png');
+      }
+      .useful__picture-3 {
+        background-image: url('../img/useful/useful-3.png');
+      }
+      .useful__picture-4 {
+        background-image: url('../img/useful/useful-4.png');
+      }
+      .useful__picture-5 {
+        background-image: url('../img/useful/useful-5.png');
+      }
+    }
+  }
+}

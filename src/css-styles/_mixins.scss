@@ -1,0 +1,142 @@
+@import '_variables.scss';
+
+// container
+
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin container-base {
+  max-width: 1280px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+
+@mixin container-1024 {
+  max-width: 100%;
+  @include margin-auto;
+  padding-left: 36px;
+  padding-right: 36px;
+  // overflow: hidden;
+}
+
+@mixin container-768 {
+  max-width: 100%;
+  @include margin-auto;
+  padding-left: 72px;
+  padding-right: 72px;
+  // overflow: hidden;
+}
+
+@mixin container-320 {
+  max-width: 100%;
+  @include margin-auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  // overflow: hidden;
+}
+
+@mixin btn-reset {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+@mixin btn-1 {
+  @include btn-reset;
+  max-width: 128px;
+  outline: 2px solid $primary;
+  border-radius: 10px;
+  padding: 18px 35px;
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $primary;
+}
+
+@mixin btn-hover {
+  background-color: $primary-light;
+}
+
+@mixin btn-focus {
+  background-color: $primary-light;
+  outline: 2px solid $primary-shade;
+}
+
+@mixin btn-active {
+  background-color: $primary-shade;
+  outline: 2px solid $primary-shade;
+}
+
+@mixin btn-1-hover {
+  color: $white;
+  background-color: $primary;
+  outline: 2px solid $primary;
+  border: none;
+}
+
+@mixin btn-1-focus {
+  color: $white;
+  background-color: $primary-light;
+  outline: 2px solid $primary;
+  border: none;
+}
+
+@mixin btn-1-active {
+  color: $white;
+  background-color: $primary-shade;
+  outline: 2px solid $primary-shade;
+  border: none;
+}
+
+@mixin section-title {
+  margin-bottom: 26px;
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: $black;
+}
+
+@mixin section-title-320 {
+  font-size: 24px;
+  line-height: 100%;
+}
+
+@mixin link-hover {
+  color: $primary;
+  outline: none;
+}
+
+@mixin link-focus {
+  color: $primary-shade;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $pink-violet;
+  outline: none;
+}
+
+@mixin link-active {
+  color: $primary-shade;
+  outline: none;
+  background-color: transparent;
+}
+
+@mixin link-transition {
+  transition: background-color .3s ease-in-out, color .3s ease-in-out, padding .3s ease-in-out;
+}

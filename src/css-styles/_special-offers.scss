@@ -1,0 +1,240 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.special-offers {
+  &__container {
+    @include container-base;
+    padding-top: 68px;
+    padding-bottom: 70px;
+    .special-offers__nav-block {
+      position: relative;
+      button {
+        @include btn-reset;
+        svg {
+          path {
+            transition: stroke .3s ease-in-out;
+          }
+          circle {
+            transition: stroke .3s ease-in-out, fill .3s ease-in-out;
+          }
+        }
+      }
+      button:focus {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary-light;
+            stroke: $primary;
+          }
+        }
+      }
+      button:hover {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary;
+            stroke: $primary;
+          }
+
+        }
+      }
+      button:active {
+        svg {
+          path {
+            stroke: $white;
+          }
+          circle {
+            fill: $primary-shade;
+            stroke: $primary-shade;
+          }
+        }
+      }
+    }
+    .special-offers__title {
+      display: inline-block;
+      margin-bottom: 25px;
+      font-family: 'OpenSans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 100%;
+      color: $black;
+    }
+    .special-offers__list {
+      overflow-x: hidden;
+      .item-big {
+        max-width: 549px;
+        padding: 40px 45px 30px 30px;
+      }
+      &-item {
+        max-width: 17.3%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 65px 45px 30px 30px;
+        background-color: $grey-light;
+        border-radius: 10px;
+        .item__sticker-img {
+          position: absolute;
+          top: 31px;
+          left: 0;
+          z-index: 1;
+        }
+        .item__sticker {
+          position: absolute;
+          top: 31px;
+          left: 0;
+          padding: 7px 20px;
+          z-index: 10;
+          font-family: 'OpenSans';
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 19px;
+          text-align: center;
+          color: $white;
+        }
+        .item__picture {
+          align-self: center;
+          img {
+            margin-bottom: 12px;
+          }
+        }
+        .item__block {
+          display: flex;
+          flex-direction: column;
+          margin-top: auto;
+          &-title {
+            margin-bottom: 20px;
+            font-family: 'OpenSans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 130%;
+            color: $black;
+          }
+          &-price {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 21px;
+            &-new {
+              font-family: 'OpenSans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 130%;
+              color: $secondary;
+            }
+            &-old {
+              align-self: center;
+              font-family: 'OpenSans';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 130%;
+              text-decoration-line: line-through;
+              color: $grey;
+            }
+          }
+          &-extra {
+            position: absolute;
+            right: 30px;
+            bottom: 33px;
+            width: 230px;
+            height: 107px;
+            background-image: url('../img/special-offers/s-offers-2-extra.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &-extra-2 {
+            background-image: url('../img/special-offers/s-offers-5-extra.png');
+          }
+          &-button {
+            @include btn-reset;
+            max-width: 128px;
+            outline: 1px solid $primary;
+            border-radius: 10px;
+            padding: 19px 35px;
+            font-family: 'OpenSans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            color: $primary;
+            transition: color .3s ease-in-out, background-color .3s ease-in-out;
+          }
+          &-button:focus {
+            color: $white;
+            background-color: $primary-light;
+            outline: 2px solid $primary-light;
+          }
+          &-button:hover {
+            color: $white;
+            background-color: $primary;
+            outline: 2px solid $primary;
+          }
+          &-button:active {
+            color: $white;
+            background-color: $primary-shade;
+            outline: 2px solid $primary-shade;
+          }
+        }
+      }
+    }
+    .special-offers__btn-prev {
+      right: 45px;
+      left: unset;
+    }
+    .special-offers__btn-next {
+      right: var(--swiper-navigation-sides-offset, 0px);
+    }
+    .special-offers__btn-next, .special-offers__btn-prev {
+      position: absolute;
+      top: -56px;
+      width: unset;
+      cursor: pointer;
+    }
+    // .special-offers__btn-next, .special-offers__btn-prev:focus {
+    //   svg {
+    //     circle {
+    //       fill: $primary;
+    //     }
+    //     path {
+    //       stroke: $white;
+    //     }
+    //   }
+    // }
+    .special-offers__btn-prev:after, .swiper-rtl .special-offers__btn-next:after, .special-offers__btn-next:after, .swiper-rtl .special-offers__btn-next:after {
+      content: '';
+    }
+    .special-offers__btn-next svg {
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+    }
+    .special-offers__btn-prev  svg, .special-offers__btn-next svg {
+      fill: transparent;
+    }
+    .special-offers__btn-prev svg path, .special-offers__btn-prev svg circle, .special-offers__btn-next svg path, .special-offers__btn-next svg circle {
+      stroke: $primary;
+    }
+    .special-offers__btn-prev svg rect, .special-offers__btn-next svg rect {
+      fill: $primary;
+    }
+    .special-offers__btn-prev svg path, .special-offers__btn-prev svg circle, .special-offers__btn-next svg path, .special-offers__btn-next svg circle {
+      stroke: $primary;
+    }
+    .swiper-button-disabled {
+      opacity: 1;
+    }
+    .swiper-button-disabled svg path, .swiper-button-disabled svg circle {
+      stroke: $grey;
+    }
+    .swiper-button-disabled svg rect {
+      fill: $primary;
+    }
+  }
+}
